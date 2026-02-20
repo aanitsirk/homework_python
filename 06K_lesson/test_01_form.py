@@ -5,13 +5,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def get_driver():
+def test_form():
     service = Service("C:/Users/79046/Desktop/edgedriver/msedgedriver.exe")
     driver = webdriver.Edge(service=service)
-    return driver
-
-
-def fill_form(driver):
 
     driver.get('https://bonigarcia.dev/selenium-webdriver-java/data-types.html'
                )
@@ -36,20 +32,10 @@ def fill_form(driver):
 
     driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
 
-
-def test_zip_code_red():
-    driver = get_driver()
-    fill_form(driver)
     zip_code_class = driver.find_element(By.CSS_SELECTOR,
                                          '#zip-code').get_attribute('class')
     assert 'alert py-2 alert-danger' in zip_code_class
 
-    driver.quit()
-
-
-def test_green_fields():
-    driver = get_driver()
-    fill_form(driver)
     green_fields = ["#first-name", "#last-name",
                     "#address", "#e-mail", "#phone",
                     "#city", "#country", "#job-position", "#company"]
