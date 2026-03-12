@@ -54,5 +54,4 @@ class DB_Queries:
     }
     group_student = {
         "delete_by_user_id": text(
-            "DELETE FROM group_student WHERE user_id = :user_id")
-    }
+            "DELETE FROM group_student WHERE user_id = :user_id")}
