@@ -1,0 +1,3 @@
+echo "results/" > 10_lesson/.gitignore
+echo "__pycache__/" >> 10_lesson/.gitignore
+echo ".pytest_cache/" >> 10_lesson/.gitignore
